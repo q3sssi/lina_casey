@@ -1,0 +1,8 @@
+# dev: пробрасываем api и db на localhost (для Vite dev-сервера и psql)
+services:
+  api:
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      SERVE_MEDIA: "true"   # в dev /media отдаёт сам API, в проде — nginx
+  db:
+    ports: ["127.0.0.1:5432:5432"]
